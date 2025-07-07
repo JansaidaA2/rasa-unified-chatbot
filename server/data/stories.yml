@@ -1,0 +1,80 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: user asks company info
+  steps:
+    - intent: company_info
+    - action: utter_company_info
+
+- story: user asks careers info
+  steps:
+    - intent: careers
+    - action: utter_careers
+
+- story: user asks product info
+  steps:
+    - intent: products_and_services
+    - action: utter_products_and_services
+
+- story: user asks pricing info
+  steps:
+    - intent: pricing
+    - action: utter_pricing
+
+- story: user asks about office location
+  steps:
+    - intent: office_location
+    - action: utter_office_location
+
+- story: user asks about working hours
+  steps:
+    - intent: working_hours
+    - action: utter_working_hours
+
+- story: user asks for contact info
+  steps:
+    - intent: contact_info
+    - action: utter_contact_info
+
+- story: user asks about industries
+  steps:
+    - intent: industries
+    - action: utter_industries
+
+- story: user asks about data policy
+  steps:
+    - intent: data_policy
+    - action: utter_data_policy
+
+- story: multilingual greeting
+  steps:
+    - intent: translate_intent
+    - action: action_translate_and_respond

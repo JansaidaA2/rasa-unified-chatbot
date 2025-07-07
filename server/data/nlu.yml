@@ -1,0 +1,166 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: company_info
+  examples: |
+    - Tell me about your company
+    - What is UFS Networks?
+    - Can you share company details?
+    - Who are you?
+    - Describe your organization
+
+- intent: careers
+  examples: |
+    - Are you hiring?
+    - Do you have any job openings?
+    - How can I apply for a job?
+    - I want to work with UFS Networks
+    - Show me the careers page
+
+- intent: products_and_services
+  examples: |
+    - What services do you offer?
+    - Tell me about your products
+    - What solutions do you provide?
+    - What are your key services?
+    - Show your offerings
+
+- intent: pricing
+  examples: |
+    - What are your prices?
+    - How much do your services cost?
+    - Share your pricing
+    - Is there a pricing model?
+    - Tell me about pricing plans
+
+- intent: office_location
+  examples: |
+    - Where is your office?
+    - What's your company location?
+    - Where is UFS Networks located?
+    - Tell me your office address
+    - company address please
+
+- intent: working_hours
+  examples: |
+    - What are your working hours?
+    - When are you open?
+    - office hours?
+    - When can I contact you?
+
+- intent: contact_info
+  examples: |
+    - How can I contact you?
+    - Give me your contact details
+    - Contact number and email?
+    - How do I reach your team?
+
+- intent: industries
+  examples: |
+    - Which industries do you work with?
+    - What domains do you serve?
+    - Industries supported?
+    - Which sectors do you operate in?
+
+- intent: data_policy
+  examples: |
+    - What is your data privacy policy?
+    - How do you handle customer data?
+    - Tell me about your security measures
+    - Is my data safe with you?
+
+- intent: translate_intent
+  examples: |
+    - hola
+    - bonjour
+    - नमस्ते
+    - 你好

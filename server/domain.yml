@@ -1,0 +1,126 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - company_info
+  - careers 
+  - products_and_services
+  - pricing 
+  - office_location
+  - working_hours
+  - contact_info
+  - industries
+  - data_policy
+  - translate_intent 
+
+actions:
+  - action_translate_and_respond
+   
+
+responses:
+  utter_greet:
+  - text: "Hey there! How can I help you today?"
+    buttons:
+        - title: "💡 About UFS Networks"
+          payload: "/company_info"
+        - title: "📋 Services"
+          payload: "/products_and_services"
+        - title: "💼 Careers"
+          payload: "/careers"
+        - title: "💰 Pricing Info"
+          payload: "/pricing"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "See ya! Have a great day!"
+
+  utter_iamabot:
+  - text: "🤖 I'm a smart bot built with Rasa! Here to help you anytime. 💡"
+
+  utter_company_info:
+    - text: |
+        We are **UFS Networks**, a technology-driven company dedicated to delivering excellence in:
+        ✅ Software Development  
+        ✅ Artificial Intelligence (AI)  
+        ✅ Cyber Security  
+        ✅ Business Consulting  
+        ✅ Cloud & DevOps Solutions  
+
+        🌐 Learn more about us: [UFS Networks Website](https://www.ufsnetworks.com/)
+
+  utter_careers:
+    - text: |
+        🚀 Join the UFS Networks team and be part of our innovation journey!  
+        Explore open roles and apply today: [Careers at UFS Networks](https://www.ufsnetworks.com/career)
+
+  utter_products_and_services:
+    - text: |
+        Here's what we offer at UFS Networks:
+        🔹 Custom Software Development  
+        🔹 AI and Machine Learning Solutions  
+        🔹 Cyber Security Services  
+        🔹 Business Strategy Consulting  
+        🔹 Cloud Computing & DevOps  
+
+        📘 View full list: [Our Services](https://www.ufsnetworks.com/services)
+
+  utter_pricing:
+    - text: |
+        💼 We provide flexible pricing models based on your needs and project scope.  
+        Get in touch with our team for a customized quote: [Contact Sales](https://www.ufsnetworks.com/contact)
+
+  utter_office_location:
+    - text: |
+        🏢 Our head office is located at:  
+        **UFS Networks Pvt. Ltd.**  
+        K-15, H-Block, Block G 5, Malviya Nagar, New Delhi, Delhi 110017
+        📞 Phone: +91-9876543210
+
+  utter_working_hours:
+    - text: |
+        ⏰ Our working hours are:  
+        Monday to Friday: 9:00 AM – 6:00 PM IST  
+        Closed on weekends and public holidays.
+
+  utter_contact_info:
+    - text: |
+        📬 You can reach us at:  
+        📧 Email: contact@ufsnetworks.com  
+        📞 Phone: +91-9876******  
+        🌐 Website: [ufsnetworks.com](https://www.ufsnetworks.com)
+
+  utter_industries:
+    - text: |
+        🌐 We serve multiple industries including:  
+        🏥 Healthcare  
+        🛍️ Retail  
+        💳 Fintech  
+        🚚 Logistics  
+        🛡️ Insurance  
+        🏦 Banking
+
+  utter_data_policy:
+    - text: |
+        🔐 Your privacy matters to us.  
+        UFS Networks follows best practices in data security and compliance.  
+        Read our policy here: [Privacy Policy](https://www.ufsnetworks.com/privacy-policy)      
+
+        
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

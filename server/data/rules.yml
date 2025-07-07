@@ -1,0 +1,58 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Provide company info
+  steps:
+    - intent: company_info
+    - action: utter_company_info
+
+- rule: Provide careers info
+  steps:
+    - intent: careers
+    - action: utter_careers
+
+- rule: Provide products and services
+  steps:
+    - intent: products_and_services
+    - action: utter_products_and_services
+
+- rule: Provide pricing info
+  steps:
+    - intent: pricing
+    - action: utter_pricing
+
+- rule: Provide office location
+  steps:
+    - intent: office_location
+    - action: utter_office_location
+
+- rule: Provide working hours
+  steps:
+    - intent: working_hours
+    - action: utter_working_hours
+
+- rule: Provide contact info
+  steps:
+    - intent: contact_info
+    - action: utter_contact_info
+
+- rule: Provide industries served
+  steps:
+    - intent: industries
+    - action: utter_industries
+
+- rule: Provide data policy
+  steps:
+    - intent: data_policy
+    - action: utter_data_policy
