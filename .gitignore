@@ -4,6 +4,6 @@ __pycache__/
 *.db
 .env
 venv/
-models/
+# models/
 .rasa/
-server/models/
+# server/models/
