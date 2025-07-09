@@ -1,27 +1,26 @@
-# Use a compatible Python version (Rasa 3.1.0 requires <3.10)
+# Use Python 3.9 base image
 FROM python:3.9-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+# Prevent interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Set working directory
+# Create app directory
 WORKDIR /app
 
-# Install system dependencies
+# Install OS dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential gcc libpq-dev curl git
+    build-essential gcc git curl libpq-dev
 
 # Copy project files
-COPY . /app
+COPY . .
 
-# Upgrade pip and install dependencies
+# Upgrade pip & install dependencies
 RUN pip install --upgrade pip
 RUN pip install rasa==3.1.0
 RUN pip install -r requirements.txt
 
-# Expose port (used by Railway)
+# Expose port for Railway
 EXPOSE 8000
 
-# Run Rasa server
+# Start Rasa server
 CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug", "-p", "8000"]
