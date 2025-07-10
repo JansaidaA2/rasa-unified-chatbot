@@ -1,36 +1,33 @@
 # Use Python 3.9 base image
 FROM python:3.9-slim
 
-# Avoid interactive prompts during installs
+# Prevent interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install OS dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential gcc git curl libpq-dev
+    build-essential gcc git curl libpq-dev && \
+    apt-get clean
 
-# Copy project files into the container
+# Copy all project files
 COPY . .
 
 # Upgrade pip
 RUN pip install --upgrade pip
 
-# Install specific version of Rasa
-RUN pip install rasa==3.1.0
+# Install compatible Rasa & dependency versions
+RUN pip install rasa==3.1.0 \
+    websockets==10.4 \
+    sanic==21.2.1
 
-# Fix compatibility with Rasa 3.1.0 by pinning websockets
-RUN pip install websockets==10.4
-
-# Install all other dependencies (optional failure tolerated for non-critical issues)
+# Install remaining requirements
 RUN pip install -r requirements.txt || true
 
-# Train the Rasa model
-RUN rasa train
-
-# Expose port for Railway
+# Expose port for Railway or other platforms
 EXPOSE 8000
 
-# Run the Rasa server
+# Start Rasa server
 CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug", "-p", "8000"]
